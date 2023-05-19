@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardenzio 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <!-- <script src="assets/js/components/three.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+        <div class="hud">
+            <h1>Configure</h1>
+            <div v-for="option in selectedOptions"   @mouseleave="removePopup">
+                <div class="option">
+                    <div class="option-caption">
+                        <strong class="h3">Vyber {{ option.name }}</strong>
+                        <br>
+                        <span class="propName">
+                            {{option.title}}
+                        </span>
+                    </div>
+                    <div class="option-img" @mouseenter="displayPopup(option.name)"><img
+                            :src="'/assets/materialy/' + option.file" alt=""></div>
+                </div>
+
+                <template v-if="options && options.name === option.name">
+                    <div class="items">
+                        <div v-for="(item, index) in options.items" class="item">
+                            <div class="option-img" @click="klik(option.name, index)">
+                                <img :src="'/assets/materialy/' + item.file" alt="">
+                            </div>
+                            <span>{{ item.title }}</span>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </div>
+        <section id="models">
+            <div class="container">
+                <div class="row">
+                    <threejs :model="model" :door="door" :desk="desk" :frame="frame"/>
+                </div>
+            </div>
+        </section>
+    </div>
+        
+        <script src="assets/js/three.js"></script>
+        <script src="assets/js/GLTFLoader.js"></script>
+        <script src="assets/js/OrbitControls.js"></script>
+        <!-- <script src="script.js"></script> -->
+        <script type="module" src="assets/js/app.js"></script>
+        
+        
+        
+</body>
+
+</html>
