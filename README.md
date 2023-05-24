@@ -3,7 +3,7 @@ Toto sú nejaké zaujímavé kúsky môjho kódu.
 
 # VR konfigurátor
 Projekt je nutné pustiť cez live server.
-(Mojou úlohou bola čisto logika a funkčnos. Štýly už boli na iných ľuďoch preto to len tak vyzerá)
+(Mojou úlohou bola čisto logika a funkčnosť. Štýly už boli na iných ľuďoch preto to len tak vyzerá)
 
 # Giulio
 Jedná sa o mobilnú aplikaciu, ktorú som vytváral. Mám k nej túto prezentáciu:
